@@ -5,7 +5,7 @@
 
 # 1. Install
 [![npm package](https://img.shields.io/npm/v/horizontal_carousel.svg)](https://www.npmjs.com/package/horizontal_carousel)
-Include the JS and CSS files into your HTML, any way you want to. Copy/paste the CSS or as `<script` and `<link` tags. Change @latest to specific npm version. Better yet, download files, and serve locally.
+Include the JS and CSS files into your HTML, any way you want to. Copy/paste the CSS or as `<script` and `<link` tags. Change @latest to @x.x.x npm version. Better yet, download files, and serve locally.
 
 ```
 <script src="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/window/index.js"></script>
