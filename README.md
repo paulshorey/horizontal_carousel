@@ -8,8 +8,9 @@
 Include the JS and CSS files into your HTML, any way you want to. Copy/paste the CSS or as `<script` and `<link` tags.
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/browser"></script>
-<link href="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/default.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/window/index.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/css/default.css" rel="stylesheet" type="text/css" />
+<!-- change @latest to specific npm version, above. Better yet, download files, and serve locally -->
 ```
 or if you're using a framework like React:
 ```
