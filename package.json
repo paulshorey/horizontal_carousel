@@ -1,6 +1,6 @@
 {
   "name": "horizontal_carousel",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Horizontal carousel for images, videos, divs. Supports variable width content! Easily style and customize.",
   "private": false,
   "dependencies": {},
@@ -24,12 +24,12 @@
   "main": "cjs/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twodashes/node.git"
+    "url": "git+https://github.com/paulshorey/horizontal_carousel.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/twodashes/node/issues"
+    "url": "https://github.com/paulshorey/horizontal_carousel/issues"
   },
-  "homepage": "https://github.com/twodashes/node#readme"
+  "homepage": "https://github.com/paulshorey/horizontal_carousel#readme"
 }
