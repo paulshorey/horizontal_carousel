@@ -1,4 +1,4 @@
-class horizontal_carousel {
+class HorizontalCarousel {
   carousel;
   /*
    * To be called in React componentDidMount or similar,
@@ -191,7 +191,7 @@ function debounce(callback, wait) {
  * EXPORT MODULE
  *
  */
-export default horizontal_carousel;
+export default HorizontalCarousel;
 
 /*
  *
@@ -214,12 +214,12 @@ export default horizontal_carousel;
  * </script>
  */
 if (typeof window === "object") {
-  window.horizontal_carousel = horizontal_carousel;
+  window.horizontal_carousel = HorizontalCarousel;
   window.horizontal_carousels = function (elements) {
     let refs = [];
     if (elements && elements.length) {
       for (let el of elements) {
-        refs.push(new horizontal_carousel(el));
+        refs.push(new HorizontalCarousel(el));
       }
     }
     return refs;

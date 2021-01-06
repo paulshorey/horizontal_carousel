@@ -14,14 +14,14 @@ Include the JS and CSS files into your HTML, any way you want to. Copy/paste the
 ```
 or if you're using a framework like React:
 ```
-import horizontal_carousel from "horizontal_carousel/css/default.css"
+import "horizontal_carousel/css/default.css"
 import horizontal_carousel from "horizontal_carousel/esm"
 /* change "/esm" to "/cjs" if you're using CommonJS */
 ```
 
 Only one requirement: the carousel div must contain `.slides`. Children of `.slides` are the contents to be scrolled, and each can be any type of tag.
 
-For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent. Ask me about it.
+For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent. NPM does not allow capitalization. JS vars don't allow dashes. How do you prefer to name your modules?
 ```
 <div class="horizontal_carousel" id="myCarousel">
   <div class="slides">
