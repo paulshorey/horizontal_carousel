@@ -12,42 +12,70 @@ Include the JS and CSS files into your HTML, any way you want to. Copy/paste the
 <script src="/path/to/horizontal_carousel.js"></script>
 <link href="/path/to/horizontal_carousel.css" rel="stylesheet" type="text/css" />
 ```
-
-# 2. Minimal usage
-
-Simply include this HTML into your site. You can have multiple different slideshows. The script will figure it out!
-
+or if you're using a framework like React:
 ```
-<div class="horizontal_carousel">
+import horizontal_carousel from "horizontal_carousel/css/style.css"
+import horizontal_carousel from "horizontal_carousel/esm"
+/* change "/esm" to "/cjs" if you're using CommonJS */
+```
+
+HTML structure. `.horizontal_carousel` class name is required only for default CSS to style it. Inside it must contain `.slides` which is the tag used by JavaScript to set up the user interaction. Children of `.slides` can be anything.
+```
+<div class="horizontal_carousel" id="myCarousel">
   <div class="slides">
     <img src="path/to/photo1.jpg" />
     <img src="path/to/photo2.jpg" />
     <img src="path/to/photo3.jpg" />
     <img src="path/to/photo4.jpg" />
     <img src="path/to/photo5.jpg" />
-    <img src="path/to/photo6.jpg" />
   </div>
 </div>
 ```
 
+# 2. Init
+In an app:
+```
+   componentDidMount(){
+      // See React documentation about how to use refs.
+      this.carousel = new horizontal_carousel(this.ref.current)
+   }
+   componentWillUnmount(){
+      // This is important, to clean up event listeners!
+      this.carousel.end()
+   }
+```
+In the browser:
+```
+  <body>
+    ...
+    <!-- Init one carousel (as a class, use "new"): -->
+    <script>
+       let myCar = new horizontal_carousel(document.querySelectorAll('#myCarousel'))
+       // then, optionally, to remove event listeners:
+       myCar.end()
+    </script>
+
+    <!-- Init multiple carousels (as a function, without "new"): -->
+    <script>
+       let refs = horizontal_carousels(document.querySelectorAll('.horizontal_carousel'))
+       // then, optionally, to remove event listeners:
+       for (let ref of refs) { ref.end(); }
+    </script>
+  </body>
+```
+
 # 3. Fail-safe
 
-In case the JavaScript/CSS does not load (bad internet, misplaced file), add these CSS styles to your site. A "fall-back". With this, the carousel will still look decent, horizontal, not just a column of images!
+In case the JavaScript/CSS does not load (bad internet, misplaced file), you may want to add this CSS styles to your site as a "fall-back". With this, the carousel will still look decent, horizontal, not just a column of images!
 
 ```scss
 .horizontal_carousel {
   // define color for prev/next arrows:
-  color: var(--color-attention);
-
+  color: orange;
   // default styles in case JS does not load:
   white-space: nowrap;
   overflow: auto;
-
   // your choice of height/margin:
-  height: 9.25rem;
-  .slides > * {
-    margin-right: 0.25rem;
-  }
   img {
     height: 9rem;
     width: auto;
@@ -75,7 +103,7 @@ Override default styles as needed. If you don't like the arrows which come by de
 </div>
 ```
 
-The only requirement for the slideshow is that you include a parent element with `class="horizontal_carousel"` and inside it a child element with `class="slides"`. Inside that, include a list of elements. Any tag name, any style, any content...
+The only requirement for the slideshow is that it contains an element `class="slides"`. Inside this can be any type of content.
 
 ```
 <div class="horizontal_carousel">
@@ -103,4 +131,4 @@ The only requirement for the slideshow is that you include a parent element with
 
 # About
 
-Built by Paul for paulshorey.com. Not tested at all outside that one site! Please contact me if you'd like to work on this together.
+Built by Paul originally for paulshorey.com. Then converted to a module for https://besta.domains. Not tested except on these two sites. Please let me know if it works for you. Please star. Please feel free to contribute.

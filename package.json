@@ -8,27 +8,10 @@
     "parcel": "^1.12.4",
     "rollup": "^2.35.1"
   },
-  "scripts_docs": [
-    [
-      "1. **cut_index** - Copy ./esm/index.js to ./index.mjs (so it does not get converted in next step)"
-    ],
-    [
-      "2. **cjs** - Convert ./esm to ./cjs"
-    ],
-    [
-      "3. **put_index** - Copy ./index.mjs back to ./esm/index.js"
-    ],
-    [
-      "4. **cjs_index** - Convert ./esm/index.js to ./cjs/index.js (so it can get processed without reference to other files)"
-    ],
-    [
-      "5. **browser** - Convert ./esm to ./__"
-    ]
-  ],
   "scripts": {
     "build": "npm run cjs && npm run browser",
-    "browser": "rm -rf .parcel-cache && rm -rf __ && parcel build cjs/* && mv dist __",
-    "cjs": "rm -rf cjs && rollup esm/* --format cjs --dir cjs/ --exports auto"
+    "browser": "rm -rf .parcel-cache && rm -rf window && parcel build cjs/* && mv dist window",
+    "cjs": "rm -rf cjs && rollup esm/*.js --format cjs --dir cjs/ --exports auto"
   },
   "targets": {
     "app": {
