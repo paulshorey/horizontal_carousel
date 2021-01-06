@@ -1,0 +1,52 @@
+{
+  "name": "horizontal-carousel",
+  "version": "0.0.1",
+  "description": "Simple horizontal carousel. Supports variable width content! Supports images, divs, lists, videos, whatever element can be a child of <div style='display:flex'>.",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "rollup": "^2.35.1"
+  },
+  "scripts_docs": [
+    [
+      "1. **cut_index** - Copy ./esm/index.js to ./index.mjs (so it does not get converted in next step)"
+    ],
+    [
+      "2. **cjs** - Convert ./esm to ./cjs"
+    ],
+    [
+      "3. **put_index** - Copy ./index.mjs back to ./esm/index.js"
+    ],
+    [
+      "4. **cjs_index** - Convert ./esm/index.js to ./cjs/index.js (so it can get processed without reference to other files)"
+    ],
+    [
+      "5. **browser** - Convert ./esm to ./__"
+    ]
+  ],
+  "scripts": {
+    "build": "npm run cjs && npm run browser",
+    "browser": "rm -rf .parcel-cache && rm -rf __ && parcel build cjs/* && mv dist __",
+    "cjs": "rm -rf cjs && rollup esm/* --format cjs --dir cjs/ --exports auto"
+  },
+  "targets": {
+    "app": {
+      "engines": {
+        "browsers": "> 0.75%"
+      }
+    }
+  },
+  "module": "esm/index.js",
+  "main": "cjs/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twodashes/node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twodashes/node/issues"
+  },
+  "homepage": "https://github.com/twodashes/node#readme"
+}

@@ -1,0 +1,66 @@
+.horizontal_carousel {
+}
+
+.horizontal_carousel .slides {
+  position: relative;
+  margin: 0;
+  overflow: auto;
+  display: flex;
+  scroll-behavior: smooth;
+}
+
+.horizontal_carousel .slides > * {
+  position: relative;
+  margin-right: 0.25rem;
+}
+
+.horizontal_carousel .slides img {
+  position: relative;
+  width: auto;
+}
+
+.horizontal_carousel .arrows {
+  pointer-events: none;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.horizontal_carousel .arrows .prev,
+.horizontal_carousel .arrows .next {
+  color: currentColor;
+  pointer-events: all;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.horizontal_carousel .arrows .prev {
+  left: 0;
+  padding-right: 15px;
+}
+.horizontal_carousel .arrows .next {
+  right: 0;
+  padding-left: 15px;
+}
+
+/*
+ * default arrows
+ */
+.horizontal_carousel .arrows svg.prev,
+.horizontal_carousel .arrows svg.next {
+  height: 48%;
+  top: 26%;
+  transform: scale(0.8, 1.15);
+}
+.horizontal_carousel .arrows svg.prev {
+}
+.horizontal_carousel .arrows svg.next {
+}
