@@ -4,7 +4,7 @@
 2. This carousel supports variable-width slides. Unlike others I've tried. Each slide in this can have any aspect ratio. Others I've tried force you to make all slides exactly the same aspect ratio. That's no fun.
 
 # 1. Install
-
+[![npm package](https://img.shields.io/npm/v/horizontal_carousel.svg)](https://www.npmjs.com/package/horizontal_carousel)
 Include the JS and CSS files into your HTML, any way you want to. Copy/paste the CSS or as `<script` and `<link` tags.
 
 ```
@@ -19,9 +19,9 @@ import horizontal_carousel from "horizontal_carousel/esm"
 /* change "/esm" to "/cjs" if you're using CommonJS */
 ```
 
-Only one requirement: the carousel div must contain `.slides`. Children of `.slides` are the contents to be scrolled, and each can be any type of tag.
+Only one requirement: the carousel div must contain `.slides`. Children of `.slides` are the contents to be scrolled, they can be anything.
 
-For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent. NPM does not allow capitalization. JS vars don't allow dashes. How do you prefer to name your modules?
+For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent. NPM does not allow capitalization. JS vars don't allow dashes. How do you prefer to name things?
 ```
 <div class="horizontal_carousel" id="myCarousel">
   <div class="slides">
