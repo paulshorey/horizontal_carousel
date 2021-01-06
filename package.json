@@ -1,6 +1,6 @@
 {
-  "name": "horizontal-carousel",
-  "version": "0.0.1",
+  "name": "horizontal_carousel",
+  "version": "0.0.2",
   "description": "Simple horizontal carousel. Supports variable width content! Supports images, divs, lists, videos, whatever element can be a child of <div style='display:flex'>.",
   "private": false,
   "dependencies": {},

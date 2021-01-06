@@ -2,24 +2,25 @@
 
 1. This carousel is very simple to install, very lightweight, and very customizable. It can be styled for any use case, and display any type of content.
 2. This carousel supports variable-width slides. Unlike others I've tried. Each slide in this can have any aspect ratio. Others I've tried force you to make all slides exactly the same aspect ratio. That's no fun.
-3. It's useful, and flexible. Currently using on a statically rendered React site. It even works in Webpack's dev environment. In the future I plan to extend and use for all sorts of thing, for personal projects and client sites/apps.
 
 # 1. Install
 
 Include the JS and CSS files into your HTML, any way you want to. Copy/paste the CSS or as `<script` and `<link` tags.
 
 ```
-<script src="/path/to/horizontal_carousel.js"></script>
-<link href="/path/to/horizontal_carousel.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/browser"></script>
+<link href="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/default.css" rel="stylesheet" type="text/css" />
 ```
 or if you're using a framework like React:
 ```
-import horizontal_carousel from "horizontal_carousel/css/style.css"
+import horizontal_carousel from "horizontal_carousel/css/default.css"
 import horizontal_carousel from "horizontal_carousel/esm"
 /* change "/esm" to "/cjs" if you're using CommonJS */
 ```
 
-HTML structure. `.horizontal_carousel` class name is required only for default CSS to style it. Inside it must contain `.slides` which is the tag used by JavaScript to set up the user interaction. Children of `.slides` can be anything.
+Only one requirement: the carousel div must contain `.slides`. Children of `.slides` are the contents to be scrolled, and each can be any type of tag.
+
+For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent. Ask me about it.
 ```
 <div class="horizontal_carousel" id="myCarousel">
   <div class="slides">
