@@ -1,5 +1,5 @@
 class HorizontalCarousel {
-  carousel;
+  carousel = undefined;
   /*
    * To be called in React componentDidMount or similar,
    * after carousel div has been loaded into the DOM.
