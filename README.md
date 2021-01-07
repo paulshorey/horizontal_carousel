@@ -7,7 +7,7 @@
 
 Very customizable. Only one requirement: the carousel element must contain a child "`.slides`". Children of `.slides` are the contents to be scrolled, they can be anything.
 
-For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent. NPM does not allow capitalization. JS vars don't allow dashes. How do you prefer to name things?
+For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent.
 
 Scroll down for advanced usage.
 
@@ -51,17 +51,33 @@ Include the JS and CSS files into your HTML, any way you want to. Copy/paste the
 # Use in React or similar framework
 Scroll down for advanced usage, and code screenshots.
 ```
-import "horizontal_carousel/css/default.css"
-import horizontal_carousel from "horizontal_carousel"
+  import "horizontal_carousel/css/default.css"
+  import horizontal_carousel from "horizontal_carousel"
 ```
 ```
+  constructor(){
+    this.carouselRef = React.createRef()
+  }
    componentDidMount(){
-      // See React documentation about how to use refs.
+      // Mount the carousel prev/next/resize event listeners
       this.carousel = new horizontal_carousel(this.ref.current)
    }
    componentWillUnmount(){
-      // This is important, to clean up event listeners!
+      // This is important - clean up event listeners!
       this.carousel.end()
+   }
+   render(){
+    return(
+      <div class="horizontal_carousel" ref={this.carouselRef}>
+        <div class="slides">
+          <img src="path/to/photo1.jpg" />
+          <img src="path/to/photo2.jpg" />
+          <img src="path/to/photo3.jpg" />
+          <img src="path/to/photo4.jpg" />
+          <img src="path/to/photo5.jpg" />
+        </div>
+      </div>
+    )
    }
 ```
 
@@ -133,10 +149,10 @@ The only requirement for the slideshow is that it contains an element `class="sl
 
 # About
 
-> Built by Paul originally for paulshorey.com. See basic usage there.
+> Built by Paul originally for paulshorey.com. Quickly init multiple carousels:
 ![used in paulshorey.com](./public/screenshots/code_ps.png)
 
-> Then converted to a module for https://besta.domains. Advanced usage, with custom buttons. Code coming soon.
+> Then converted to a module for https://besta.domains. Proper React ref, custom buttons:
 ![used in besta.domains](./public/screenshots/code_besta.png)
 
 Not tested except on these two sites. Please let me know if it works for you. Please star. Please feel free to contribute.
