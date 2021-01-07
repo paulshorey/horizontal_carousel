@@ -3,53 +3,34 @@
 1. This carousel is very simple to install, very lightweight, and very customizable. It can be styled for any use case, and display any type of content.
 2. This carousel supports variable-width slides. Unlike others I've tried. Each slide in this can have any aspect ratio. Others I've tried force you to make all slides exactly the same aspect ratio. That's no fun.
 
-# 1. Install
 [![npm package](https://img.shields.io/npm/v/horizontal_carousel.svg)](https://www.npmjs.com/package/horizontal_carousel)
 
-Include the JS and CSS files into your HTML, any way you want to. Copy/paste the CSS or as `<script` and `<link` tags. Change @latest to @x.x.x npm version. Better yet, download files, and serve locally.
-
-```
-<script src="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/window/index.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/css/default.css" rel="stylesheet" type="text/css" />
-```
-or if you're using a framework like React:
-```
-import "horizontal_carousel/css/default.css"
-import horizontal_carousel from "horizontal_carousel/esm"
-/* change "/esm" to "/cjs" if you're using CommonJS */
-```
-
-Only one requirement: the carousel div must contain `.slides`. Children of `.slides` are the contents to be scrolled, they can be anything.
+Very customizable. Only one requirement: the carousel element must contain a child "`.slides`". Children of `.slides` are the contents to be scrolled, they can be anything.
 
 For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent. NPM does not allow capitalization. JS vars don't allow dashes. How do you prefer to name things?
-```
-<div class="horizontal_carousel" id="myCarousel">
-  <div class="slides">
-    <img src="path/to/photo1.jpg" />
-    <img src="path/to/photo2.jpg" />
-    <img src="path/to/photo3.jpg" />
-    <img src="path/to/photo4.jpg" />
-    <img src="path/to/photo5.jpg" />
-  </div>
-</div>
-```
 
-# 2. Init
-In an app:
+Scroll down for advanced usage.
+
+
+# 1. Use in browser
+
+Include the JS and CSS files into your HTML, any way you want to. Copy/paste the CSS or as `<script` and `<link` tags. Change @latest to @x.x.x npm version. Better yet, download files, and serve locally.
 ```
-   componentDidMount(){
-      // See React documentation about how to use refs.
-      this.carousel = new horizontal_carousel(this.ref.current)
-   }
-   componentWillUnmount(){
-      // This is important, to clean up event listeners!
-      this.carousel.end()
-   }
-```
-In the browser:
-```
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest"></script>
+    <link href="https://cdn.jsdelivr.net/npm/horizontal_carousel@latest/css/default.css" rel="stylesheet" type="text/css" />
+  </head>
   <body>
-    ...
+    <div class="horizontal_carousel" id="myCarousel">
+      <div class="slides">
+        <img src="path/to/photo1.jpg" />
+        <img src="path/to/photo2.jpg" />
+        <img src="path/to/photo3.jpg" />
+        <img src="path/to/photo4.jpg" />
+        <img src="path/to/photo5.jpg" />
+      </div>
+    </div>
+
     <!-- Init one carousel (as a class, use "new"): -->
     <script>
        let myCar = new horizontal_carousel(document.querySelectorAll('#myCarousel'))
@@ -65,6 +46,25 @@ In the browser:
     </script>
   </body>
 ```
+
+
+# Use in React or similar framework
+Scroll down for advanced usage, and code screenshots.
+```
+import "horizontal_carousel/css/default.css"
+import horizontal_carousel from "horizontal_carousel"
+```
+```
+   componentDidMount(){
+      // See React documentation about how to use refs.
+      this.carousel = new horizontal_carousel(this.ref.current)
+   }
+   componentWillUnmount(){
+      // This is important, to clean up event listeners!
+      this.carousel.end()
+   }
+```
+
 
 # 3. Fail-safe
 
@@ -133,4 +133,10 @@ The only requirement for the slideshow is that it contains an element `class="sl
 
 # About
 
-Built by Paul originally for paulshorey.com. Then converted to a module for https://besta.domains. Not tested except on these two sites. Please let me know if it works for you. Please star. Please feel free to contribute.
+> Built by Paul originally for paulshorey.com. See basic usage there.
+![used in paulshorey.com](./public/screenshots/code_ps.png)
+
+> Then converted to a module for https://besta.domains. Advanced usage, with custom buttons. Code coming soon.
+![used in besta.domains](./public/screenshots/code_besta.png)
+
+Not tested except on these two sites. Please let me know if it works for you. Please star. Please feel free to contribute.
