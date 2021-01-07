@@ -1,17 +1,22 @@
 {
   "name": "horizontal_carousel",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Horizontal carousel for images, videos, divs. Supports variable width content! Easily style and customize.",
   "private": false,
+  "module": "dist/index.js",
+  "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
-    "parcel": "^1.12.4",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.2",
     "rollup": "^2.35.1"
   },
   "scripts": {
-    "build": "npm run cjs && npm run browser",
-    "browser": "rm -rf .parcel-cache && rm -rf window && parcel build cjs/* && mv dist window",
-    "cjs": "rm -rf cjs && rollup esm/*.js --format cjs --dir cjs/ --exports auto"
+    "build": "npm run dist",
+    "dist": "rollup src/*.js --format esm --dir dist --exports auto --name horizontal_carousel --config"
+  },
+  "scriptsNotes": {
+    "npm run dist": "--format must be 'esm'! During build, rollup will transform to 'umd' hybrid. See rollup.config.js"
   },
   "targets": {
     "app": {
@@ -20,8 +25,6 @@
       }
     }
   },
-  "module": "esm/index.js",
-  "main": "cjs/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paulshorey/horizontal_carousel.git"
