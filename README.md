@@ -149,10 +149,10 @@ The only requirement for the slideshow is that it contains an element `class="sl
 
 # About
 
-> Built by Paul originally for paulshorey.com. Quickly init multiple carousels:
+Built by Paul originally for paulshorey.com. Quickly init multiple carousels:
 ![used in paulshorey.com](./public/screenshots/code_ps.png)
 
-> Then converted to a module for https://besta.domains. Proper React ref, custom buttons:
+Then converted to a module for https://besta.domains. Proper React ref, custom buttons:
 ![used in besta.domains](./public/screenshots/code_besta.png)
 
 Not tested except on these two sites. Please let me know if it works for you. Please star. Please feel free to contribute.
