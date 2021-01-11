@@ -12,6 +12,7 @@ class HorizontalCarousel {
    * </script>
    */
   constructor(carousel_element) {
+    if (!carousel_element || !carousel_element.querySelectorAll) return
     this.carousel = carousel_element;
     /*
      * Wait for the images to load, then init.
@@ -66,6 +67,12 @@ class HorizontalCarousel {
    */
   private_init_carousel = () => {
     let { carousel } = this;
+    // fix temporary chromium bug - happens to certain horizontal-scrolled elements - even if this script not included
+    // actually looks pretty cool - looks intentional - on page load, it scrolls a little, to bring attention to divs
+    let slides = carousel.querySelector(".slides");
+    if (slides) {
+      slides.scrollTo(0, 0)
+    }
     // add arrows if not exist
     let arrows = carousel.querySelector(".arrows");
     if (!arrows) {

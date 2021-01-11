@@ -56,7 +56,15 @@
     });
 
     _defineProperty(this, "private_init_carousel", function () {
-      var carousel = _this.carousel; // add arrows if not exist
+      var carousel = _this.carousel; // fix temporary chromium bug - happens to certain horizontal-scrolled elements - even if this script not included
+      // actually looks pretty cool - looks intentional - on page load, it scrolls a little, to bring attention to divs
+
+      var slides = carousel.querySelector(".slides");
+
+      if (slides) {
+        slides.scrollTo(0, 0);
+      } // add arrows if not exist
+
 
       var arrows = carousel.querySelector(".arrows");
 
@@ -157,6 +165,7 @@
       }
     });
 
+    if (!carousel_element || !carousel_element.querySelectorAll) return;
     this.carousel = carousel_element;
     /*
      * Wait for the images to load, then init.

@@ -7,7 +7,7 @@
 
 Very customizable. Only one requirement: the carousel element must contain a child "`.slides`". Children of `.slides` are the contents to be scrolled, they can be anything.
 
-For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores (in personal projects) to keep variable names consistent.
+For the default CSS, the parent element must use `.horizontal_carousel` class name. Sorry about the underscore for people who don't like that. I like to use underscores in personal projects.
 
 Scroll down for advanced usage.
 
