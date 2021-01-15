@@ -48,7 +48,7 @@ Include the JS and CSS files into your HTML, any way you want to. Copy/paste the
 ```
 
 
-# Use in React or similar framework
+# 2. Use in React or similar framework
 Scroll down for advanced usage, and code screenshots.
 ```
   import "horizontal_carousel/css/default.css"
