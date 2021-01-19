@@ -155,4 +155,4 @@ Built by Paul originally for paulshorey.com. Quickly init multiple carousels:
 Then converted to a module for https://besta.domains. Proper React ref, custom buttons:
 ![used in besta.domains](./public/screenshots/code_besta.png)
 
-Not tested except on these two sites. Please let me know if it works for you. Please star. Please feel free to contribute.
+Not tested except on these two sites. Please let me know if it works for you. Please feel free to contribute.
