@@ -3,7 +3,6 @@
 
 .horizontal_carousel .slides {
   position: relative;
-  margin: 0;
   overflow: auto;
   display: flex;
   scroll-behavior: smooth;
@@ -58,11 +57,14 @@
  */
 .horizontal_carousel .arrows svg.prev,
 .horizontal_carousel .arrows svg.next {
-  height: 48%;
-  top: 26%;
+  height: 67%;
+  max-height: 84px;
+  top: calc(49% - 42px);
   transform: scale(0.8, 1.15);
+  color: orange;
 }
 .horizontal_carousel .arrows svg.prev {
 }
 .horizontal_carousel .arrows svg.next {
+  margin-right: 1px;
 }
