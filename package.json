@@ -1,17 +1,16 @@
 {
   "name": "horizontal_carousel",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Horizontal carousel for images, videos, divs. Supports variable width content! Easily style and customize.",
   "private": false,
   "module": "dist/index.js",
   "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/preset-env": "^7.13.10",
-    "@rollup/plugin-babel": "^5.2.2",
-    "rollup": "^2.35.1"
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@rollup/plugin-babel": "^5.3.0",
+    "rollup": "^2.52.3"
   },
   "scripts": {
     "build": "npm run dist",
