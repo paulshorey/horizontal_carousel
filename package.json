@@ -1,10 +1,10 @@
 {
   "name": "horizontal_carousel",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Horizontal carousel for images, videos, divs. Supports variable width content! Easily style and customize.",
   "private": false,
-  "module": "./dist/index.js",
-  "main": "./dist/index.js",
+  "module": "src/index.js",
+  "main": "src/index.js",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "npm run dist",
-    "dist": "rollup esm/*.js --format esm --dir dist --exports auto --name horizontal_carousel --config",
+    "dist": "rollup esm/*.js --format esm --dir src --exports auto --name horizontal_carousel --config",
     "dev": "npm run dist -- --watch"
   },
   "scriptsNotes": {

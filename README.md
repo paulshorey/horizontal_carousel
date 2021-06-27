@@ -11,6 +11,9 @@ For the default CSS, the parent element must use `.horizontal_carousel` class na
 
 Scroll down for advanced usage.
 
+# NOTE:
+I can't get package.json main and module keys to work properly, and import from ./dist/index.js. Instead it imports from ./src/index.js. So, I put the "src" files into "esm", and the transpiled "dist" output code now goes into "src".
+
 
 # 1. Use in browser
 
