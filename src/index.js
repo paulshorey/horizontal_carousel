@@ -59,12 +59,14 @@
       var carousel = _this.carousel; // fix temporary chromium bug - happens to certain horizontal-scrolled elements - even if this script not included
       // actually looks pretty cool - looks intentional - on page load, it scrolls a little, to bring attention to divs
 
-      var slides = carousel.querySelector(".slides");
+      setTimeout(function () {
+        if (typeof carousel === "undefined" || !carousel || !carousel.querySelector) return;
+        var slides = carousel.querySelector(".slides");
 
-      if (slides) {
-        slides.scrollTo(0, 0);
-      } // add arrows if not exist
-
+        if (slides) {
+          slides.scrollTo(0, 0);
+        }
+      }, 1000); // add arrows if not exist
 
       var arrows = carousel.querySelector(".arrows");
 

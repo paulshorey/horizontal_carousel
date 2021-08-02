@@ -1,6 +1,6 @@
 {
   "name": "horizontal_carousel",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Horizontal carousel for images, videos, divs. Supports variable width content! Easily style and customize.",
   "private": false,
   "module": "src/index.js",
